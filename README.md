@@ -2,9 +2,17 @@
 
 ## 概要
 Docker × Streamable HTTP MCPサーバーでポートを自由に変えることのできるサンプルが見たらないため作成しました。これを利用することで、環境を汚さずにコンテナ管理の上でMCPを利用できます。
+分かりやすいようにコードは最小限にしています。
+※copilotのchatでのみの検証に注意
 
 ## 事前準備
 docker、docker-composeを利用できるようにしてください
+
+リポジトリのクローン
+```
+git clone https://github.com/morikazu1119/sample-mcp-server.
+cd sample-mcp-server
+```
 
 ## コンテナ作成
 ```
@@ -24,5 +32,8 @@ docker compose up --build -d
 }
 ```
 
+以下のように、おすすめのゲームを聞くとオセロしか答えなくなります。
+![alt text](chat.png)
+
 ### Claude
-WSLのDockerで構築しており、ややこしいため保留
+自分がWSLのDockerで構築しており、ややこしいため保留
