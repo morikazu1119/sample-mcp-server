@@ -1,0 +1,9 @@
+services:
+  mcp-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mcp-server
+    ports:
+      - "8765:8765"
+    restart: unless-stopped
