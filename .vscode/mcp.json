@@ -1,0 +1,7 @@
+{
+    "servers": {
+        "recommand-game": {
+            "url": "http://localhost:8765/mcp/"
+        }
+    }
+}
