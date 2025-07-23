@@ -1,3 +1,5 @@
+import argparse
+
 import uvicorn
 from mcp.server.fastmcp import FastMCP
 
@@ -10,11 +12,16 @@ def recommend_game(request):
 
 
 def main():
-    uvicorn.run(
-        mcp.streamable_http_app,
-        host="0.0.0.0",
-        port=8765,
+    parser = argparse.ArgumentParser(description="Sample FastMCP Server")
+    parser.add_argument(
+        "--host", type=str, required=True, help="Host to bind the server"
     )
+    parser.add_argument(
+        "--port", type=int, required=True, help="Port to bind the server"
+    )
+    args = parser.parse_args()
+
+    uvicorn.run(mcp.streamable_http_app, host=args.host, port=int(args.port), workers=1)
 
 
 if __name__ == "__main__":
